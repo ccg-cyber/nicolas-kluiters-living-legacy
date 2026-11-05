@@ -1,0 +1,17 @@
+name: Recover Pages branch publishing
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure direct branch publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh api --method PUT "repos/$GH_REPO/pages" -f build_type=legacy -f 'source[branch]=main' -f 'source[path]=/'
+          gh api --method POST "repos/$GH_REPO/pages/builds"
