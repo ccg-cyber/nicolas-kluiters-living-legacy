@@ -1,19 +1,22 @@
 # Nicolas Kluiters — A Living Legacy
 
-An independent, static memorial and historical archive in Arabic, French, and English. The site has no build tools, paid services, APIs, or runtime dependencies. The five supplied photographs are preserved in `assets/` with captions that distinguish archival material from restored and contemporary artwork.
+An independent, static historical archive in Arabic, French, and English. It contains eight pages in each language: home, biography, Barqa, timeline, cause, places of memory, photo archive, and sources. Arabic is the root language; English and French live in `/en/` and `/fr/`.
 
-## Local preview
+## Build and preview
 
-Open `index.html` in a browser or serve this directory with any static HTTP server.
+The site uses plain HTML and CSS and has no runtime or build dependencies. To regenerate the localized pages after editing the content in `build_site.py`, run `python3 build_site.py`. Then open `index.html` or serve the repository with a static HTTP server.
 
 ## Publishing
 
-The `Publish to GitHub Pages` workflow publishes the root of this repository whenever changes reach `main`. The public site is served at `https://<account>.github.io/<repository>/`.
+The `Publish to GitHub Pages` workflow publishes the repository root on every push to `main`. The public site is at https://ccg-cyber.github.io/nicolas-kluiters-living-legacy/.
 
-## Historical and image notes
+## Research and editorial approach
 
-- The timeline's ministry duration, kidnapping, and recovery dates follow [Jesuits in Europe](https://jesuits.eu/news/1998-beatification-process-dutch-jesuit-started). The article describes around ten years of ministry in Bekaa Valley villages, kidnapping on 14 March 1985, and recovery of his body on 1 April 1985.
-- The diocesan beatification process opened in January 2022, as reported by [Jesuits in Europe](https://jesuits.eu/news/1930-nicolas-kluiters-towards-a-beatification).
-- Image files were supplied by the project owner. Confirm publication rights and add photographer credits when known.
-- `portrait-restored.jpg` is digitally colorized. `memorial-art.jpg` is contemporary artwork, not a historical photograph.
-- This independent project is not an official Jesuit or beatification cause website.
+- Claims are linked to sources near the text and collected on the sources page. The archive uses “mid-1970s” for the start of Barqa ministry because published accounts differ on the year.
+- The diocesan inquiry opened in Beirut on 22 January 2022, according to [Jesuits in Europe](https://jesuits.eu/news/1998-beatification-process-dutch-jesuit-started). The site does not claim beatification, canonization, or any later cause stage without an official announcement.
+- The [Order of Malta Lebanon](https://orderofmaltalebanon.org/center/barqa-bekaa) says the Barqa community health centre was established in 1985 in his memory. It arose after his death; the archive does not call it a centre he founded.
+- The gallery keeps the five supplied project images. It adds nine historical images attributed by [Nidaa Al Watan](https://www.nidaalwatan.com/article/356466-%D8%A7%D9%84%D8%A3%D8%A8-%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF-%D9%86%D9%8A%D9%83%D9%88%D9%84%D8%A7-%D9%83%D9%84%D9%88%D9%8A%D8%AA%D8%B1%D8%B2-%D8%AD%D9%8A%D9%86-%D8%B5%D8%A7%D8%B1-%D8%A7%D9%84%D9%83%D8%A7%D9%87%D9%86-%D9%88%D8%B7%D9%86%D8%A7-%D9%84%D8%A8%D9%84%D8%AF%D8%A9-%D8%A8%D8%B1%D9%82%D8%A7) to the Barqa Archive, plus one contemporary Barqa centre photograph credited to the Order of Malta Lebanon via L’Orient-Le Jour. Publisher-hosted photos are linked, not copied into this repository. Rights remain with their owners.
+- `portrait-restored.jpg` is digitally colorized. `memorial-art.jpg` is contemporary artwork, not a historical photograph. The project images were supplied without photographer or date information.
+- The archive did not verify a dedicated official Facebook or Instagram account, a standalone Wikipedia biography, an officially designated sanctuary, or an official transfer of remains to Barqa. These points are described with that uncertainty on the site.
+
+This is an independent project, not an official Jesuit, Order of Malta, or beatification-cause website.
