@@ -20,3 +20,9 @@ The `Publish to GitHub Pages` workflow publishes the repository root on every pu
 - The archive did not verify a dedicated official Facebook or Instagram account, a standalone Wikipedia biography, an officially designated sanctuary, or an official transfer of remains to Barqa. These points are described with that uncertainty on the site.
 
 This is an independent project, not an official Jesuit, Order of Malta, or beatification-cause website.
+
+## Interactive experience
+
+The archive now has 11 sections per language (33 pages), including village discovery, prayer and a media room. `premium.py` and `quiz.py` extend the content generator. `assets/site.js` adds search, native sharing with copy fallback, photo filters and an accessible image dialog, a five-question discovery challenge, and a one-minute reflection timer. Optional intentions are stored only in the visitor’s browser on an explicit save action. The site collects no prayer submissions. Community contributions link to public GitHub issues.
+
+Additional village research includes OSAD’s 2008 reservoir account, Anera’s December 2012 Barqa-Rabiaa irrigation report, and Maria Chakhtoura’s September 2010 village feature. Historical project reports are labelled by date.
