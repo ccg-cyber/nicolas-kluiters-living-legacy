@@ -8,7 +8,7 @@ The site uses plain HTML and CSS and has no runtime or build dependencies. To re
 
 ## Publishing
 
-The `Publish to GitHub Pages` workflow publishes the repository root on every push to `main`. The public site is at https://ccg-cyber.github.io/nicolas-kluiters-living-legacy/.
+For direct publication, set GitHub Pages to “Deploy from a branch”, `main`, `/(root)`. GitHub then publishes the repository root after pushes. The manual `Publish to GitHub Pages` workflow remains available as an alternative; artifact names include the attempt number to make retries unambiguous. The public site is at https://ccg-cyber.github.io/nicolas-kluiters-living-legacy/.
 
 ## Research and editorial approach
 
