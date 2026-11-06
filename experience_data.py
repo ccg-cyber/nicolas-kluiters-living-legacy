@@ -64,6 +64,7 @@ T = {
  "tab_pray": ("صلاة", "Pray", "Prier"),
  "tab_play": ("العب", "Play", "Jouer"),
  "tab_heritage": ("التراث", "Heritage", "Héritage"),
+ "tab_watch": ("شاهد", "Watch", "Vidéos"),
  "tab_more": ("المزيد", "More", "Plus"),
  # pray page
  "p_candle_h": ("شمعة صلاة", "A candle of prayer", "Une bougie de prière"),
@@ -141,6 +142,45 @@ T = {
  "s_candle": ("شمعة", "Candle", "Bougie"), "s_rosary": ("مسبحة", "Rosary", "Chapelet"), "s_memory": ("ذاكرة", "Memory", "Mémoire"), "s_quiz": ("اختبار", "Quiz", "Quiz"), "s_card": ("بطاقة", "Card", "Carte"), "s_ics": ("تقويم", "Calendar", "Agenda"),
  "share_title": ("الأب نيكولا كلويترز — إرث حيّ", "Father Nicolas Kluiters — A Living Legacy", "Père Nicolas Kluiters — Un héritage vivant"),
 }
+
+T.update({
+ "watch": ("شاهد واستمع", "Watch & listen", "Voir et écouter"),
+ "watch_sum": ("وثائقيات وشهادات عن الأب نيكولا، وليتورجيا مارونية وقديسون، تُشغَّل هنا مباشرة.", "Films and testimonies on Father Nicolas, Maronite liturgy and saints, playing right here.", "Films et témoignages sur le père Nicolas, liturgie maronite et saints, à voir ici même."),
+ "eyebrow_watch": ("بثّ · ذاكرة · ليتورجيا", "STREAM · MEMORY · LITURGY", "VIDÉO · MÉMOIRE · LITURGIE"),
+ "story": ("القصة", "Story", "Histoire"),
+ "v_all": ("الكل", "All", "Tout"), "v_nk": ("الأب نيكولا", "Father Nicolas", "Père Nicolas"), "v_lit": ("الليتورجيا المارونية", "Maronite liturgy", "Liturgie maronite"), "v_sai": ("قديسون وأرض", "Saints & land", "Saints et terre"),
+ "v_play": ("شغّل", "Play", "Lire"), "v_popout": ("نافذة منبثقة", "Pop out", "Agrandir"), "v_next": ("التالي", "Next", "Suivant"), "v_prev": ("السابق", "Previous", "Précédent"), "v_yt": ("على يوتيوب", "On YouTube", "Sur YouTube"),
+ "v_note": ("الفيديوهات مستضافة على يوتيوب ولأصحابها. لا يُحمَّل أي شيء من يوتيوب إلا عند الضغط على التشغيل، وعبر نطاق الخصوصية المحسّنة.", "Videos are hosted on YouTube and belong to their owners. Nothing loads from YouTube until you press play, and it uses the privacy-enhanced domain.", "Les vidéos sont hébergées sur YouTube et appartiennent à leurs auteurs. Rien n'est chargé depuis YouTube avant que vous ne lanciez la lecture, via le domaine à confidentialité renforcée."),
+ "v_channels": ("قنوات مباشرة وأرشيف", "Live channels & archives", "Chaînes en direct et archives"),
+ "v_channels_p": ("افتح بثًّا أو قناة رسمية في نافذة جديدة.", "Open a broadcast or official channel in a new tab.", "Ouvrez une diffusion ou une chaîne officielle dans un nouvel onglet."),
+ "v_noursat": ("نورسات — تلفزيون كاثوليكي من لبنان", "Noursat — Catholic television from Lebanon", "Noursat — télévision catholique du Liban"),
+ "v_harissa": ("مزار سيدة لبنان — حريصا", "Our Lady of Lebanon Shrine — Harissa", "Sanctuaire Notre-Dame du Liban — Harissa"),
+ "v_omalta": ("جمعية فرسان مالطا — لبنان", "Order of Malta Lebanon", "Ordre de Malte Liban"),
+ "h_watch_film": ("شاهد الفيلم", "Watch the film", "Voir le film"),
+ "h_fact1": ("وُلد في دلفت", "Born in Delft", "Né à Delft"), "h_fact2": ("وصل إلى لبنان", "Arrived in Lebanon", "Arrivée au Liban"), "h_fact3": ("رُسم كاهنًا", "Ordained a priest", "Ordonné prêtre"),
+ "h_featured": ("الفيلم الرئيسي", "Featured film", "Film à la une"), "h_more_watch": ("كل الفيديوهات", "All videos", "Toutes les vidéos"),
+ "h_explore": ("استكشف القصة", "Explore the story", "Explorer l'histoire"),
+ "h_q": ("الوصول السريع", "Quick access", "Accès rapide"),
+ "w_h": ("مرحبًا بك", "Welcome", "Bienvenue"), "w_p": ("من أين تحب أن تبدأ؟ يمكنك دائمًا العودة من القائمة.", "Where would you like to start? You can always come back from the menu.", "Par où souhaitez-vous commencer ? Vous pouvez toujours revenir via le menu."),
+ "w_1": ("شاهد الفيلم", "Watch the film", "Voir le film"), "w_1d": ("16 دقيقة عن حياته", "16 minutes on his life", "16 minutes sur sa vie"), "w_2": ("اقرأ السيرة", "Read the story", "Lire l'histoire"), "w_2d": ("من دلفت إلى برقا", "From Delft to Barqa", "De Delft à Barqa"), "w_3": ("صلِّ بهدوء", "Pray quietly", "Prier au calme"), "w_3d": ("شمعة، مسبحة، آية", "Candle, rosary, verse", "Bougie, chapelet, verset"),
+ "w_skip": ("تخطَّ", "Skip", "Passer"),
+ "s_watch": ("مشاهدة", "Watch", "Vidéo"),
+ "search_hint": ("ابحث… (Ctrl K)", "Search… (Ctrl K)", "Rechercher… (Ctrl K)"),
+})
+VIDEOS = [
+ ("j1xhLSwpmq8", "nk", "Nicolas Kluiters: A Life of Faith and Service in Lebanon", "JRS Lebanon", "16:44"),
+ ("Pvq5ax4Cqfg", "nk", "Nicolaas Kluiters s.j.: verzoener tussen haat en oorlog", "Otheo", "15:10"),
+ ("mLrQWPJmc6A", "nk", "Jesuit Father Nicolas Kluiters · الأب نيكولا كلويترز اليسوعي", "William Matar", "5:39"),
+ ("U8cCwo218sM", "nk", "Semaine jésuite 2012 : P. Nicolas Kluiters", "Collège Notre-Dame de Jamhour", "3:09"),
+ ("vwez68R8-XU", "nk", "Testimony about Father Nicolas Kluiters s.j. in Barka", "Salim Matta", "1:13"),
+ ("NhySGZHTx0k", "nk", "Father Nicolas Kluiters", "Cris Geagea", "2:10"),
+ ("L3KRreejUHU", "lit", "Sunday Mass — Pontifical Maronite Divine Liturgy", "St. John Cantius", "1:26:16"),
+ ("ZHi142Kb-JA", "lit", "Maronite Divine Liturgy — Feast of Saint Sharbel", "Our Lady of the Cedars", "2:23:39"),
+ ("9_nzeWCDasE", "lit", "Lebanese Maronite Mass (1959 recording) — Arabic and Syriac Aramaic", "j farhat", "46:26"),
+ ("tF8SYCuYKBE", "sai", "St. Charbel, the “Miracle Monk” of Lebanon", "Ascension Presents", "9:57"),
+ ("moc1w1ADEYs", "sai", "درب رفقا — وثائقي عن حياة القديسة رفقا (1)", "Order of Lebanese Maronite Religious", "10:38"),
+ ("-IlYNA1NjqI", "sai", "Canyons and Caves Preserve a Tradition from Early Christianity in Lebanon", "National Geographic", "3:59"),
+]
 
 # (ref, ar, en, fr)
 VERSES = [

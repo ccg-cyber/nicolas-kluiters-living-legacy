@@ -708,7 +708,7 @@ def render(lang, slug):
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='theme-color' content='#17241f'>
+<meta name='theme-color' content='#0f4a39'>
 <meta name='description' content='{escape(data['summary'], quote=True)}'>
 <meta property='og:type' content='website'>
 <meta property='og:title' content='{escape(data['title'], quote=True)} · {escape(T['site'], quote=True)}'>

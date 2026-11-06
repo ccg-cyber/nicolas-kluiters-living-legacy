@@ -17,7 +17,7 @@ UI = {
 }
 HINTS = {"ar": "هذا الموقع متوفر بالعربية — افتح النسخة العربية", "en": "This site is available in English — open the English version", "fr": "Ce site est disponible en français — ouvrir la version française"}
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; font-src 'self'; "
-       "connect-src 'self'; worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'")
+       "connect-src 'self'; frame-src https://www.youtube-nocookie.com; worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'")
 _dims = {}
 
 def dims(rel):
@@ -40,8 +40,8 @@ def install(g):
         # --- head: drop third-party fonts, add self-hosted fonts, icons, manifest, security, social
         html = re.sub(r"<link rel='preconnect'[^>]*>\n?", "", html)
         html = re.sub(r"<link href='https://fonts\.googleapis\.com[^>]*>\n?", "", html)
-        face = "NotoNaskhArabic-400" if lang == "ar" else "DMSans-400"
-        face2 = "NotoNaskhArabic-700" if lang == "ar" else "DMSans-500"
+        face = "IBMPlexSansArabic-400" if lang == "ar" else "Inter-400"
+        face2 = "Amiri-700" if lang == "ar" else "Newsreader-500"
         og_alt = escape(T["site"], quote=True)
         title = escape(data["title"], quote=True)
         desc = escape(data["summary"], quote=True)
@@ -125,7 +125,7 @@ def page(title, body, lang="en", rtl=False):
 <head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='robots' content='noindex'><meta http-equiv='Content-Security-Policy' content="{CSP}">
 <meta name='theme-color' content='#17241f'><link rel='icon' href='/assets/favicon.svg' type='image/svg+xml'>
-<link rel='stylesheet' href='/assets/site.css'><link rel='stylesheet' href='/assets/polish.css'><title>{title}</title></head>
+<link rel='stylesheet' href='/assets/site.css'><link rel='stylesheet' href='/assets/pro.css'><title>{title}</title></head>
 <body><main id='main' class='status-page'>{body}</main></body></html>
 """
 

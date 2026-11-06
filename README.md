@@ -34,3 +34,7 @@ Additional village research includes OSAD’s 2008 reservoir account, Anera’s 
 ## Experience layer
 
 `experience.py` + `experience_data.py` + `assets/experience.{css,js}` add a second design language and new sections in all three languages: **Prayer sanctuary** (virtual candles, interactive Rosary with the four sets of mysteries, prayer library incl. Syriac Aramaic opening of the Our Father, generated ambient tone), **Maronite heritage** (saints, computed feast calendar with `.ics` export), **Play & learn** (archive memory game, 11-question heritage quiz, HD/UHD prayer-card studio), a day/night theme, an app-style bottom tab bar on phones, a local-only “Pilgrim passport” with stamps, “continue where you left off” and personalised “keep exploring”. Everything is stored in the visitor’s browser only. Feast dates and saint facts should be reviewed by a Maronite parish or the Maronite Patriarchate before being treated as authoritative.
+
+## Design system (v3)
+
+`assets/pro.css` is the single design system: Newsreader / Inter (Latin) and Amiri / IBM Plex Sans Arabic, all self-hosted and subset; a Lucide icon sprite (`assets/icons.svg`, ISC licence); arch-shaped hero, pill controls, compact sticky header, bottom tab bar on phones, bottom-sheet popups. The built-in player (`[data-player]`) is a privacy-friendly facade: nothing loads from YouTube until Play, then `youtube-nocookie.com`. Video list lives in `experience_data.py` (`VIDEOS`); every ID was verified embeddable via YouTube oEmbed.
