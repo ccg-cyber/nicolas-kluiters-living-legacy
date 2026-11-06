@@ -361,3 +361,59 @@ dialog::backdrop{background:radial-gradient(60% 60% at 50% 40%,#0b4a3a88,#03100b
 .float-card{background:#06302acc}.float-card:hover{background:#06302ae6}
 .primary a,.primary button{padding:0 12px}
 @media(max-width:1100px){.primary{display:none}}
+
+/* ============ v5 · Golden-hour village: limestone, terracotta tile, cedar, candle gold ============ */
+:root{
+ --bg:#f6eee1;--ink:#2a1f18;--muted:#675649;--line:#ffffffb8;--hair:#e3d3bb;
+ --primary:#a3472f;--primary-2:#85361f;--deep:#3a2015;--gold:#d19a3c;--gold-soft:#f1d08b;--gold-ink:#7b5310;
+ --cedar:#3e5a41;--teal:#3e5a41;--rose:#b9553d;--sky:#9db9cc;--link:#8a3a24;--ring:#d19a3c;
+ --grad-primary:linear-gradient(135deg,#b9553a 0%,#8a3822 100%);--grad-gold:linear-gradient(135deg,#f7dd9f,#d9a54a);--grad-cedar:linear-gradient(135deg,#4d6e50,#2f4733);
+ --grad-deep:linear-gradient(135deg,#4a2819 0%,#2a150d 100%);
+ --glass-shadow:0 1px 0 #ffffffd0 inset,0 10px 30px -14px #6b3a2450,0 2px 6px #6b3a2418;
+ --mesh:radial-gradient(52vw 46vh at 4% -6%,#f7d9b0 0,transparent 62%),radial-gradient(46vw 42vh at 98% 4%,#cfdfe9 0,transparent 58%),radial-gradient(60vw 52vh at 52% 108%,#dfe5c6 0,transparent 62%),radial-gradient(30vw 30vh at 94% 62%,#efc9b8 0,transparent 60%)}
+html[data-theme=dark]{--bg:#150e0a;--ink:#f1e7d8;--muted:#b9a894;--line:#ffffff1c;--hair:#3a2a20;--primary:#c8643f;--primary-2:#d9764f;--deep:#2a170e;--link:#f0b48e;--gold-ink:#e8c37a;--cedar:#7fa583;
+ --mesh:radial-gradient(52vw 46vh at 4% -6%,#5b2f1a 0,transparent 62%),radial-gradient(46vw 42vh at 98% 6%,#5a4417 0,transparent 58%),radial-gradient(60vw 52vh at 52% 108%,#22302a 0,transparent 62%)}
+.btn.primary,.button-link{background:var(--grad-primary);box-shadow:0 8px 20px -8px #8a382299,0 1px 0 #ffffff40 inset}
+.btn.primary:hover,.button-link:hover{background:linear-gradient(135deg,#c9633f,#963f27);box-shadow:0 12px 26px -8px #8a3822cc,0 1px 0 #ffffff50 inset}
+.primary a[aria-current=page],.language-switch a[aria-current=true],.vchips button[aria-pressed=true],.chip-row button[aria-pressed=true],.mys-tabs button[aria-selected=true],.gallery-filters button[aria-pressed=true]{background:var(--grad-primary);color:#fff}
+.tabbar [aria-current=page]{background:var(--grad-primary);color:#fff}
+.brand .mark,html[data-theme=dark] .brand .mark{color:#7d3420}html[data-theme=dark] .brand .mark{color:#d9764f}
+.qa-ic{background:var(--grad-primary)}.qa:nth-child(3n+2) .qa-ic{background:var(--grad-gold);color:#2a1a08}.qa:nth-child(3n) .qa-ic{background:var(--grad-cedar);color:#fff}
+.card-link .ci,.mi-ic{color:var(--primary)}html[data-theme=dark] .card-link .ci,html[data-theme=dark] .mi-ic{color:var(--gold-soft)}
+/* hero: candle-lit evening over the village */
+.hero{background:radial-gradient(60% 90% at 88% 0%,#e9a05f66,transparent 62%),radial-gradient(50% 70% at 0% 100%,#b9553a44,transparent 60%),linear-gradient(160deg,#6a3320 0%,#3a1f14 55%,#24120b 100%);box-shadow:0 40px 80px -40px #3a1f1499,0 1px 0 #ffffff30 inset;border-color:#ffffff22;padding-bottom:clamp(110px,14vw,170px)}
+.hero::after{content:'';position:absolute;inset:auto 0 0 0;height:clamp(110px,16vw,190px);background:url(village.svg) center bottom/cover no-repeat;pointer-events:none;z-index:-1;border-radius:0 0 34px 34px}
+.hero::before{border-color:#f1d08b30;box-shadow:0 0 0 46px #f1d08b0f,0 0 0 92px #f1d08b09}
+.hero-art::before{border-color:var(--gold)}
+.arch{background:#2a150d;box-shadow:0 30px 60px -24px #000a}
+.arch img{filter:sepia(.12) saturate(1.05)}
+.float-card{background:#2a150dcc}.float-card:hover{background:#2a150de6}
+.hero .btn.ghost{color:#fff}
+.lead{color:#ead9c3}.hero-facts span{color:#d9c3a8}
+.pill{background:#ffffff18;color:var(--gold-soft)}
+.page-pray .page-hero,.page-heritage .page-hero,.page-play .page-hero,.page-media .page-hero{background:radial-gradient(60% 120% at 100% 0%,#e9a05f55,transparent 62%),linear-gradient(160deg,#5f2e1d,#2c160d);box-shadow:0 30px 60px -34px #3a1f1488,0 1px 0 #ffffff30 inset}
+.page-pray .page-summary,.page-heritage .page-summary,.page-play .page-summary,.page-media .page-summary{color:#ead9c3}
+.page-pray .page-hero::before,.page-heritage .page-hero::before,.page-play .page-hero::before,.page-media .page-hero::before{content:'';position:absolute;inset:auto 0 0 0;height:90px;background:url(village.svg) center bottom/cover no-repeat;opacity:.9;z-index:-1}
+.today-feast,.next-feast,.journey-bar,.ambient-card{background:linear-gradient(135deg,#6a3320e6,#2c160de6);border-color:#ffffff22}
+.today-feast .soft,.next-feast .soft,.journey-bar p{color:#ead9c3}
+.candle-stage{background:radial-gradient(90% 130% at 15% 0%,#6a3320,#241109)}
+.candle-form label,.candle-form .soft,.ambient-card .soft{color:#d9c3a8}
+.mem-face.back{background:repeating-linear-gradient(45deg,#6a3320,#6a3320 9px,#7d3d27 9px,#7d3d27 18px)}
+.mem-card.done .mem-face.front{border-color:#5f8a63;box-shadow:0 0 0 3px #5f8a6366}
+.player-main{background:#1c0f09}.facade .play{background:var(--grad-gold)}
+.journey-meter i,.stamp-meter i,.q-meter i{background:linear-gradient(90deg,#d19a3c,#f1d08b)}
+.rosary-done,.win-msg,.feast time b,.timeline time{color:var(--primary)}html[data-theme=dark] .rosary-done,html[data-theme=dark] .win-msg,html[data-theme=dark] .feast time b,html[data-theme=dark] .timeline time{color:var(--gold-soft)}
+.feast.k-lord{border-inline-start-color:var(--cedar)}.feast.k-saint{border-inline-start-color:var(--primary)}
+.syriac{color:var(--primary)}.beads li.on{background:radial-gradient(circle at 35% 30%,#f1d08b,#a06a24)}
+.quiz2 .quiz-options button.correct{background:#dbe7cf;border-color:#5f8a63;color:#1d2a1b}
+.page-hero .eyebrow{color:var(--gold-ink)}
+.toc a:hover,.toc a[aria-current=true]{color:var(--primary)}
+dialog::backdrop{background:radial-gradient(60% 60% at 50% 40%,#5a2c1a88,#150a06d9)}
+html[data-theme=dark] dialog{background:#1c110ce6}html[data-theme=dark] .bar,html[data-theme=dark] .tabbar{background:#1c110cb3}
+.theater{background:#120905f2}
+.today-verse blockquote p{color:var(--ink)}
+.site-footer{border-top-color:var(--hair)}
+::selection{background:#f1d08b;color:#2a1f18}
+.page-pray .page-hero,.page-heritage .page-hero,.page-play .page-hero,.page-media .page-hero{padding-bottom:104px}
+.page-pray .page-hero::before,.page-heritage .page-hero::before,.page-play .page-hero::before,.page-media .page-hero::before{height:84px;opacity:.85}
+@media(max-width:860px){.page-pray .page-hero,.page-heritage .page-hero,.page-play .page-hero,.page-media .page-hero{padding-bottom:84px}}

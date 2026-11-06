@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice"><defs><linearGradient id="m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9a566" stop-opacity=".0"/><stop offset="1" stop-color="#e9a566" stop-opacity=".35"/></linearGradient></defs>
+<rect width="1200" height="220" fill="url(#m)"/>
+<path d="M0 150 C150 105 260 135 380 118 C520 98 600 140 760 120 C900 102 1040 128 1200 100 V220 H0Z" fill="#6b3a24" fill-opacity=".38"/>
+<path d="M0 175 C120 150 250 170 400 152 C560 134 680 172 840 150 C980 132 1100 160 1200 140 V220 H0Z" fill="#4a2616" fill-opacity=".6"/>
+<g fill="#2c150c" fill-opacity=".9">
+<g><rect x="70" y="150" width="46" height="34"/><path d="M62 150 L93 128 L124 150Z"/></g>
+<g><rect x="135" y="158" width="38" height="28"/><path d="M129 158 L154 140 L179 158Z"/></g>
+<g><rect x="225" y="152" width="52" height="34"/><path d="M217 152 L251 128 L285 152Z"/></g>
+<g><rect x="318" y="160" width="36" height="26"/><path d="M312 160 L336 143 L360 160Z"/></g>
+<!-- church with bell tower -->
+<g><rect x="520" y="132" width="110" height="56"/><path d="M510 132 L575 100 L640 132Z"/>
+<rect x="640" y="78" width="34" height="110"/><path d="M634 78 L657 40 L680 78Z"/>
+<rect x="655" y="18" width="4" height="26"/><rect x="648" y="26" width="18" height="4"/>
+<path d="M560 188 V160 a15 15 0 0 1 30 0 V188Z" fill="#e8b45e" fill-opacity=".85"/>
+<circle cx="657" cy="104" r="7" fill="#e8b45e" fill-opacity=".85"/></g>
+<g><rect x="720" y="156" width="44" height="30"/><path d="M712 156 L742 136 L772 156Z"/></g>
+<g><rect x="800" y="148" width="54" height="38"/><path d="M792 148 L827 124 L862 148Z"/></g>
+<g><rect x="905" y="158" width="40" height="28"/><path d="M899 158 L925 140 L951 158Z"/></g>
+<g><rect x="985" y="150" width="50" height="36"/><path d="M977 150 L1010 128 L1043 150Z"/></g>
+<!-- cedars -->
+<g id="c"><rect x="438" y="150" width="6" height="38"/><path d="M441 92 L424 124 H436 L418 150 H464 L446 124 H458Z"/></g>
+<g><rect x="1096" y="146" width="6" height="42"/><path d="M1099 84 L1080 120 H1092 L1072 148 H1126 L1106 120 H1118Z"/></g>
+<g><rect x="30" y="160" width="5" height="28"/><path d="M32 118 L18 144 H27 L12 162 H52 L37 144 H46Z"/></g>
+</g>
+<g fill="#f3c46a" fill-opacity=".9"><rect x="88" y="158" width="6" height="8"/><rect x="246" y="160" width="6" height="8"/><rect x="822" y="158" width="6" height="8"/><rect x="1004" y="160" width="6" height="8"/><rect x="146" y="166" width="5" height="7"/><rect x="334" y="168" width="5" height="7"/></g>
+<rect y="186" width="1200" height="34" fill="#1d0e08"/></svg>

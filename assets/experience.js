@@ -72,11 +72,46 @@ if(ros){const day=new Date().getDay(),def=[ 'glorious','joyful','sorrowful','glo
  $('[data-undo]',ros).onclick=()=>{if(st.bead>0)st.bead--;else if(st.decade>0){st.decade--;st.bead=9;}save();draw();};
  $('[data-restart]',ros).onclick=()=>{st={set:st.set,decade:0,bead:0};save();draw();};draw();}
 
-/* ---------- ambient tone (generated; no recordings) ---------- */
+/* ---------- soft nay (Arabic flute) with a gentle ison, generated on the device ---------- */
 const amb=$('#ambient');
-if(amb){let ctx=null,nodes=[];function start(){ctx=new (window.AudioContext||window.webkitAudioContext)();const master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);master.gain.linearRampToValueAtTime(.12,ctx.currentTime+3);
- [110,164.81,220,329.63].forEach((f,i)=>{const o=ctx.createOscillator();o.type='sine';o.frequency.value=f;const g=ctx.createGain();g.gain.value=.25/(i+1);const l=ctx.createOscillator();l.frequency.value=.07+i*.03;const lg=ctx.createGain();lg.gain.value=.12/(i+1);l.connect(lg).connect(g.gain);o.connect(g).connect(master);o.start();l.start();nodes.push(o,l);});nodes.master=master;}
- function stop(){if(!ctx)return;const c=ctx;nodes.master.gain.linearRampToValueAtTime(0,c.currentTime+1);setTimeout(()=>{nodes.forEach(n=>{try{n.stop();}catch{}});c.close();},1100);ctx=null;nodes=[];}
+if(amb){
+ let ctx=null,master=null,timer=null,alive=[],step=0;
+ // Maqam Rast on D (quarter-flat F# and C# approximated), the mode of much Eastern church and village chant
+ const D4=293.66,ratio=c=>Math.pow(2,c/1200);
+ const SC={0:0,1:200,2:350,3:500,4:700,5:900,6:1050,7:1200,8:1400}; // cents above D4
+ const note=d=>D4*ratio(SC[d]);
+ // slow, singable phrases: [scale degree, beats]  (0 = rest handled with null)
+ const PH=[
+  [[4,2],[3,1],[2,1],[1,2],[0,3]],
+  [[0,2],[1,1],[2,2],[3,1],[2,2]],
+  [[2,2],[4,1],[5,2],[4,1],[3,2],[2,1],[1,2],[0,4]],
+  [[0,2],[2,2],[1,1],[0,1],[1,3]],
+  [[5,2],[4,1],[3,1],[4,2],[2,2],[1,1],[0,4]],
+  [[1,2],[2,1],[3,3],[2,1],[1,1],[0,3]]
+ ];
+ function impulse(c,sec){const len=c.sampleRate*sec,b=c.createBuffer(2,len,c.sampleRate);for(let ch=0;ch<2;ch++){const d=b.getChannelData(ch);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6);}return b;}
+ function breath(c,when,dur,gain){const n=c.createBufferSource(),len=Math.max(1,Math.floor(c.sampleRate*(dur+.3))),b=c.createBuffer(1,len,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<len;i++)d[i]=Math.random()*2-1;n.buffer=b;const f=c.createBiquadFilter();f.type='bandpass';f.frequency.value=2600;f.Q.value=.8;const g=c.createGain();g.gain.setValueAtTime(0,when);g.gain.linearRampToValueAtTime(gain,when+.08);g.gain.exponentialRampToValueAtTime(.0001,when+dur);n.connect(f).connect(g).connect(master.nay);n.start(when);n.stop(when+dur+.3);}
+ function nay(freq,when,dur,vel){const c=ctx,o1=c.createOscillator(),o2=c.createOscillator(),g=c.createGain(),lp=c.createBiquadFilter(),vib=c.createOscillator(),vg=c.createGain();
+  o1.type='triangle';o2.type='sine';o1.frequency.value=freq;o2.frequency.value=freq*2;
+  vib.frequency.value=4.6+Math.random()*.8;vg.gain.value=freq*.006;vib.connect(vg);vg.connect(o1.frequency);vg.connect(o2.frequency);
+  lp.type='lowpass';lp.frequency.value=1700;lp.Q.value=.4;
+  const g2=c.createGain();g2.gain.value=.22;
+  g.gain.setValueAtTime(0,when);g.gain.linearRampToValueAtTime(vel,when+.22);g.gain.setTargetAtTime(vel*.82,when+.3,.6);g.gain.linearRampToValueAtTime(0,when+dur+.5);
+  o1.connect(lp);o2.connect(g2).connect(lp);lp.connect(g).connect(master.nay);
+  [o1,o2,vib].forEach(o=>{o.start(when);o.stop(when+dur+.6);});alive.push(o1,o2,vib);breath(c,when,Math.min(dur,1.2),.045);}
+ function ison(){ // very soft held tone, an octave below the melody's final, as in Byzantine and Maronite chant
+  const c=ctx,o=c.createOscillator(),o2=c.createOscillator(),g=c.createGain(),lp=c.createBiquadFilter();o.type='sine';o2.type='sine';o.frequency.value=D4/2;o2.frequency.value=D4;lp.type='lowpass';lp.frequency.value=420;
+  g.gain.setValueAtTime(0,c.currentTime);g.gain.linearRampToValueAtTime(.045,c.currentTime+6);const g2=c.createGain();g2.gain.value=.5;o.connect(lp);o2.connect(g2).connect(lp);lp.connect(g).connect(master.bed);o.start();o2.start();alive.push(o,o2);}
+ function play(){const beat=1.55,ph=PH[Math.floor(Math.random()*PH.length)];let t=ctx.currentTime+.4;
+  ph.forEach(([d,b])=>{const dur=b*beat;nay(note(d),t,dur*.92,.16);t+=dur;});
+  const rest=2.5+Math.random()*3;timer=setTimeout(play,(t-ctx.currentTime+rest)*1000);}
+ function start(){ctx=new (window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=0;
+  const comp=ctx.createDynamicsCompressor();comp.threshold.value=-24;comp.ratio.value=3;
+  const dry=ctx.createGain(),wet=ctx.createGain(),conv=ctx.createConvolver();conv.buffer=impulse(ctx,3.6);dry.gain.value=.7;wet.gain.value=.5;
+  master.nay=ctx.createGain();master.nay.gain.value=1;master.bed=ctx.createGain();master.bed.gain.value=1;
+  master.nay.connect(dry);master.nay.connect(conv);conv.connect(wet);master.bed.connect(dry);dry.connect(master);wet.connect(master);master.connect(comp).connect(ctx.destination);
+  master.gain.linearRampToValueAtTime(.9,ctx.currentTime+3);ison();play();}
+ function stop(){if(!ctx)return;clearTimeout(timer);const c=ctx;master.gain.cancelScheduledValues(c.currentTime);master.gain.setValueAtTime(master.gain.value,c.currentTime);master.gain.linearRampToValueAtTime(0,c.currentTime+1.2);setTimeout(()=>{alive.forEach(n=>{try{n.stop();}catch{}});c.close();},1400);ctx=null;alive=[];}
  amb.onclick=()=>{const on=amb.getAttribute('aria-pressed')==='true';if(on){stop();}else{start();}amb.setAttribute('aria-pressed',String(!on));amb.querySelector('span').textContent=on?amb.dataset.off:amb.dataset.on;};
  addEventListener('pagehide',stop);}
 const pr=$('[data-print]');if(pr)pr.onclick=()=>{$$('details.prayer-item').forEach(d=>d.open=true);print();};

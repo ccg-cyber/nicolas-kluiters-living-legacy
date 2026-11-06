@@ -139,7 +139,7 @@ def finish(g):
     (ROOT / "offline.html").write_text(page("Offline · Nicolas Kluiters",
         status.format(e="OFFLINE", h="You are offline · أنت غير متصل · Hors ligne", p="Pages you have already opened remain available. Reconnect to explore the rest of the archive.", href="/en/index.html", b="Home · الرئيسية · Accueil") + langs), encoding="utf-8")
     manifest = {"name": SITE_NAME["ar"] + " | " + SITE_NAME["en"], "short_name": "Nicolas Kluiters", "description": "A trilingual historical archive on Father Nicolas Kluiters and Barqa.",
-                "lang": "ar", "dir": "rtl", "start_url": "./index.html", "scope": "./", "display": "standalone", "background_color": "#f5f2ea", "theme_color": "#17241f",
+                "lang": "ar", "dir": "rtl", "start_url": "./index.html", "scope": "./", "display": "standalone", "background_color": "#f6eee1", "theme_color": "#3a2015",
                 "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
                           {"src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml"}]}
     (ROOT / "manifest.webmanifest").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
