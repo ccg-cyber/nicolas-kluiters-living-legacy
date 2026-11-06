@@ -29,7 +29,7 @@ def dims(rel):
 
 def install(g):
     original = g["render"]
-    BASE, PAGES = g["BASE"], g["PAGES"]
+    BASE = g["BASE"]
 
     def render(lang, slug):
         html = original(lang, slug)
@@ -90,6 +90,7 @@ def install(g):
             return tag
         html = re.sub(r"<img [^>]*src='((?:\.\./)?assets/)([^']+)'[^>]*>", img, html)
         # --- previous / next page navigation
+        PAGES = g["PAGES"]
         i = PAGES.index(slug) if slug in PAGES else None
         if i is not None:
             u = UI[lang]; names = g["NAV"][lang]; parts = []

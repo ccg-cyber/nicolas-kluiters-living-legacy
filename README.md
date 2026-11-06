@@ -30,3 +30,7 @@ Additional village research includes OSAD’s 2008 reservoir account, Anera’s 
 ## Production polish
 
 `polish.py` adds: self-hosted fonts (no third-party requests), a strict Content-Security-Policy and referrer policy, Open Graph/Twitter cards and JSON-LD, favicon/manifest/offline service worker (`sw.js`), a trilingual `404.html`, intrinsic image sizes, a build-time “on this page” list, previous/next navigation, reading progress, back-to-top, a dismissible language suggestion, and print styles. Lighthouse (local, mobile emulation): 100 accessibility, 100 best practices, 100 SEO, 98–100 performance. The `QA` workflow rebuilds the site and runs `check.py` on every push.
+
+## Experience layer
+
+`experience.py` + `experience_data.py` + `assets/experience.{css,js}` add a second design language and new sections in all three languages: **Prayer sanctuary** (virtual candles, interactive Rosary with the four sets of mysteries, prayer library incl. Syriac Aramaic opening of the Our Father, generated ambient tone), **Maronite heritage** (saints, computed feast calendar with `.ics` export), **Play & learn** (archive memory game, 11-question heritage quiz, HD/UHD prayer-card studio), a day/night theme, an app-style bottom tab bar on phones, a local-only “Pilgrim passport” with stamps, “continue where you left off” and personalised “keep exploring”. Everything is stored in the visitor’s browser only. Feast dates and saint facts should be reviewed by a Maronite parish or the Maronite Patriarchate before being treated as authoritative.

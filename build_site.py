@@ -776,5 +776,7 @@ if __name__ == "__main__":
     import polish
     install(globals())
     polish.install(globals())
+    import experience
+    experience.install(globals())
     main()
     polish.finish(globals())
