@@ -143,6 +143,6 @@ def finish(g):
                 "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
                           {"src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml"}]}
     (ROOT / "manifest.webmanifest").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
-    (ROOT / "CNAME").write_text(BASE.split("//")[1] + "\n", encoding="utf-8")
+    (ROOT / "CNAME").write_text(BASE.split("//")[1], encoding="utf-8")
     sec = ".well-known"; (ROOT / sec).mkdir(exist_ok=True)
     (ROOT / sec / "security.txt").write_text(f"Contact: https://github.com/ccg-cyber/nicolas-kluiters-living-legacy/issues\nExpires: 2027-11-06T00:00:00.000Z\nPreferred-Languages: en, fr, ar\nCanonical: {BASE}/.well-known/security.txt\n", encoding="utf-8")
