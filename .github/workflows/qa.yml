@@ -1,0 +1,19 @@
+name: QA
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - name: Rebuild and confirm generated files are committed
+        run: |
+          python3 build_site.py
+          git diff --exit-code || (echo "Generated files are stale: run python3 build_site.py and commit." && exit 1)
+      - name: Check links, anchors, images, metadata
+        run: python3 check.py

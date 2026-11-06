@@ -5,8 +5,8 @@ from html import escape
 from datetime import date
 
 ROOT = Path(__file__).resolve().parent
-BASE = "https://ccg-cyber.github.io/nicolas-kluiters-living-legacy"
-UPDATED = "2026-11-05"
+BASE = "https://nk.ci-ccg.com"
+UPDATED = "2026-11-06"
 LOCALES = ("ar", "en", "fr")
 PAGES = ("index", "life", "barqa", "timeline", "cause", "places", "archive", "sources")
 
@@ -773,5 +773,8 @@ def main():
 
 if __name__ == "__main__":
     from premium import install
+    import polish
     install(globals())
+    polish.install(globals())
     main()
+    polish.finish(globals())
