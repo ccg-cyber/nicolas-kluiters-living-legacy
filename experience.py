@@ -116,7 +116,9 @@ def hero_html(lang, hrefs, data):
     return f"""<section class='hero' data-hero><div class='hero-copy'><span class='pill'>{I('cross')} {t('h_kicker', lang)}</span><h1>{escape(data['title'])}</h1><p class='lead'>{escape(data['summary'])}</p>
 <div class='cta-row'><button class='btn primary lg' type='button' data-watch='{VIDEOS[0][0]}'>{I('play')} {t('h_watch_film', lang)}</button><a class='btn ghost lg' href='{hrefs['pray']}#candle'>{I('flame')} {t('h_cta1', lang)}</a></div>
 <ul class='hero-facts'><li><b>1940</b><span>{t('h_fact1', lang)}</span></li><li><b>1966</b><span>{t('h_fact2', lang)}</span></li><li><b>1973</b><span>{t('h_fact3', lang)}</span></li></ul></div>
-<div class='hero-art'><div class='arch'><img src='ASSET_PREFIXportrait-restored-1536.webp' alt='{t('h_alt', lang)}' fetchpriority='high'></div><span class='arch-chip'>1940 – 1985</span></div></section>"""
+<div class='hero-art'><div class='arch'><img src='ASSET_PREFIXportrait-restored-1536.webp' alt='{t('h_alt', lang)}' fetchpriority='high'></div><span class='arch-chip'>1940 – 1985</span>
+<button type='button' class='float-card fc1' data-watch='{VIDEOS[0][0]}'><span class='fc-ic'>{I('play')}</span><span><strong>{t('fc1', lang)}</strong><small>{t('fc1s', lang)} · JRS Lebanon</small></span></button>
+<a class='float-card fc2' href='{hrefs['pray']}#candle'><span class='fc-ic'>{I('flame')}</span><span><strong>{t('tile_candle', lang)}</strong></span></a></div></section>"""
 
 def install(g):
     _G.update(g)
@@ -160,6 +162,10 @@ def install(g):
         html = re.sub(r"<header class='site-header'>.*?</header>", lambda m: header, html, count=1, flags=re.S)
         html = re.sub(r"<div class='page-tools[^']*'>.*?</div>", "", html, count=1, flags=re.S)
         html = html.replace("<footer class='site-footer'>", "<span class='share-status sr' role='status'></span><footer class='site-footer'>", 1)
+        legal = (f"<div class='legal'><p><strong>{t('legal1', lang).replace('CCG', '<a href=\'https://ci-ccg.com\' target=\'_blank\' rel=\'noopener noreferrer\'>CCG</a>', 1)}</strong></p><p>{t('legal2', lang)}</p>"
+                 f"<p class='legal-links'><a href='{hrefs['sources']}'>{t('legal4', lang)}</a><a href='https://github.com/ccg-cyber/nicolas-kluiters-living-legacy/issues' target='_blank' rel='noopener noreferrer'>{t('legal3', lang)}</a></p></div>")
+        html = html.replace("</footer>", legal + "</footer>", 1)
+        html = html.replace("<meta name='viewport'", "<meta name='author' content='CCG'><meta name='copyright' content='© 2026 CCG'><meta name='viewport'", 1)
         # ---- home hero
         if slug == "index":
             hero = hero_html(lang, hrefs, c["index"]).replace("ASSET_PREFIX", pre)

@@ -75,7 +75,7 @@ def install(g):
                   "isPartOf": {"@id": BASE + "/#website"}, "primaryImageOfPage": BASE + "/assets/og-image.jpg"},
                  {"@type": "BreadcrumbList", "itemListElement": crumbs}]
         if slug == "index":
-            graph.append({"@type": "WebSite", "@id": BASE + "/#website", "url": BASE + "/", "name": SITE_NAME[lang], "inLanguage": ["ar", "en", "fr"]})
+            graph.append({"@type": "WebSite", "@id": BASE + "/#website", "url": BASE + "/", "name": SITE_NAME[lang], "inLanguage": ["ar", "en", "fr"], "publisher": {"@type": "Organization", "name": "CCG", "url": "https://ci-ccg.com"}, "copyrightHolder": {"@type": "Organization", "name": "CCG"}, "copyrightYear": 2026})
         if slug in ("index", "life"):
             graph.append({"@type": "Person", "name": "Nicolas Kluiters", "alternateName": ["نيكولا كلويترز", "Nicolaas Kluiters"], "jobTitle": "Jesuit priest",
                           "birthDate": "1940", "deathDate": "1985", "nationality": "Dutch", "workLocation": {"@type": "Place", "name": "Barqa, Bekaa, Lebanon"}})

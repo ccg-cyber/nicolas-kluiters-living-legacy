@@ -144,6 +144,10 @@ T = {
 }
 
 T.update({
+ "legal1": ("© 2026 CCG. تصميم الموقع وبرمجته بواسطة CCG.", "© 2026 CCG. Site design and development by CCG.", "© 2026 CCG. Conception et développement du site par CCG."),
+ "legal2": ("الصور والنصوص والفيديوهات تبقى ملكًا لأصحابها وفق الإسناد المبيّن في كل موضع. موقع مستقل وغير رسمي.", "Photographs, texts and videos remain the property of their respective owners, as credited where they appear. Independent, unofficial site.", "Photographies, textes et vidéos restent la propriété de leurs auteurs, selon les crédits indiqués. Site indépendant et non officiel."),
+ "legal3": ("اتصل بنا", "Contact", "Contact"), "legal4": ("المصادر وحقوق الصور", "Sources & image rights", "Sources et droits d'image"),
+ "fc1": ("شاهد الفيلم", "Watch the film", "Voir le film"), "fc1s": ("16 دقيقة", "16 min", "16 min"),
  "watch": ("شاهد واستمع", "Watch & listen", "Voir et écouter"),
  "watch_sum": ("وثائقيات وشهادات عن الأب نيكولا، وليتورجيا مارونية وقديسون، تُشغَّل هنا مباشرة.", "Films and testimonies on Father Nicolas, Maronite liturgy and saints, playing right here.", "Films et témoignages sur le père Nicolas, liturgie maronite et saints, à voir ici même."),
  "eyebrow_watch": ("بثّ · ذاكرة · ليتورجيا", "STREAM · MEMORY · LITURGY", "VIDÉO · MÉMOIRE · LITURGIE"),
