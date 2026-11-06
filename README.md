@@ -38,3 +38,5 @@ Additional village research includes OSAD’s 2008 reservoir account, Anera’s 
 ## Design system (v3)
 
 `assets/pro.css` is the single design system: Newsreader / Inter (Latin) and Amiri / IBM Plex Sans Arabic, all self-hosted and subset; a Lucide icon sprite (`assets/icons.svg`, ISC licence); arch-shaped hero, pill controls, compact sticky header, bottom tab bar on phones, bottom-sheet popups. The built-in player (`[data-player]`) is a privacy-friendly facade: nothing loads from YouTube until Play, then `youtube-nocookie.com`. Video list lives in `experience_data.py` (`VIDEOS`); every ID was verified embeddable via YouTube oEmbed.
+
+Deploy note: network-first service worker (nk-v4) ships with the glass redesign.
